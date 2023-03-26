@@ -1,0 +1,36 @@
+
+span {
+    margin: auto;
+    align-items: center;
+}
+
+.main-content-container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+#queryformContainer{
+    margin: auto;
+    
+}
+
+#errorMessage{
+
+    margin: 0;
+    display: flex;
+    border: 2px solid rgb(255, 0, 0);
+    background-color: rgb(241, 109, 109);
+    color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    
+}
+
+#cancelButton:hover{
+cursor: pointer;
+}

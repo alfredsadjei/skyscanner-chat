@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+
+span {
+    display: flex;
+    align-items: flex-start;
+}
+
+textarea{
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+    resize: none;
+  
+}
+
+textarea:enabled{
+    outline: none;
+
+}
+
+textarea:hover{
+    cursor: pointer;
+    background-color: rgb(231, 231, 231);
+    
+}
+
+#queryBoxLabel {
+    margin: auto;
+    padding: 5px 0px 5px 0px ;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px 5px 0px 0px;
+    font-size: 1.8rem;
+    font-family: "Gloock", serif;
+}
+
+#submitBtn{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#submitBtn:hover{
+    cursor: pointer;
+
+}
