@@ -192,28 +192,14 @@ export default function Home() {
   );
 }
 
-async function getOriginIATA(orgn, marketData) {
+async function getEntityId(location, marketData) {
   const response = await fetch("http://localhost:3000/entityID", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       market: marketData.market.code,
       locale: marketData.locale.code,
-      searchTerm: orgn,
-    }),
-  });
-
-  return response.json();
-}
-
-async function getDestinationIATA(dest, marketData) {
-  const response = await fetch("http://localhost:3000/entityID", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      market: marketData.market.code,
-      locale: marketData.locale.code,
-      searchTerm: dest,
+      searchTerm: location,
     }),
   });
 
@@ -226,8 +212,8 @@ async function processQueryLegs(travelData, marketData) {
     const entityIDs = Promise.all(
       travelData.trip.map(async ([orgn, dest]) => {
         try {
-          const originID = await getOriginIATA(orgn, marketData);
-          const destinationID = await getDestinationIATA(dest, marketData);
+          const originID = await getEntityId(orgn, marketData);
+          const destinationID = await getEntityId(dest, marketData);
           //console.log(originID.result[0], destinationID.result[0]);
           return [
             originID.result[0].entityId,
