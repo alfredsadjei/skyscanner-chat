@@ -214,7 +214,7 @@ async function processQueryLegs(travelData, marketData) {
         try {
           const originID = await getEntityId(orgn, marketData);
           const destinationID = await getEntityId(dest, marketData);
-          //console.log(originID.result[0], destinationID.result[0]);
+
           return [
             originID.result[0].entityId,
             destinationID.result[0].entityId,
@@ -240,6 +240,8 @@ async function processQueryLegs(travelData, marketData) {
     }
   }
 }
+
+//TODO: Transfer functionality to back server to hide api key
 
 async function isValidLocation(location) {
   const apiKey = "AIzaSyDXbiwpfSkO1XGzhs0MK3iDz2ccIfF78f4";
